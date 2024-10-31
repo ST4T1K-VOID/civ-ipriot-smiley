@@ -245,16 +245,14 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > No. <br>
-> if the author expected smileys to blink the same the blinkable class that they inherit from would have defined the way they *should* blink. (basically saying *"if you can blink then you blink like this"*)
+> if the author expected smileys to blink the same the blinkable class that they inherit from would have defined the way they *should* blink. (basically saying *"if you can blink then you must blink like this"*)
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> 
->
+> Polymorphism is the ability to perform the same action with different input, for example, with the happy and sad smiley, it's possible for both smileys to inherit the blink method but blink differently.
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
-
-> 
+>  While in dynamically typed languages inheritance in relation to polymorphism is mostly for semantic reasons, in statically typed languages inheritance is a requirement for polymorphism, 
 >
 1. **Implement Blink in Sad Class:**
 
@@ -293,11 +291,11 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Abstraction
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > The reason Sad could have a blink method without inheriting from blinkable is because blinkable only provides the enforcement that anything that inherits from it must have a blink method.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
@@ -313,19 +311,19 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > The colours WHITE, GREEN, RED and YELLOW. Defined in the Smiley class
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > The colours are held in Constant variables (indicated by the all uppercase names), because these variables are constants it indicates that these variables are not intended to change during the program's execution.
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Smiley, sad and happy (or anything that inherits from smiley, where the variables originate)
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > Change the values of the YELLOW constant. (change directly, not through the program)
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
@@ -355,7 +353,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](docs/screenshots/screenshot3.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
